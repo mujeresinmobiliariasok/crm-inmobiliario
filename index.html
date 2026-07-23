@@ -30,3 +30,809 @@
 
   /* SIDEBAR */
   .sidebar { width: var(--sidebar-w); background: #0F1923; color: #fff; display: flex; flex-direction: column; padding: 20px 14px; flex-shrink: 0; min-height: 100vh; position: fixed; top: 0; left: 0; bottom: 0; z-index: 10; }
+  .brand { padding: 4px 10px 16px; border-bottom: 1px solid #333B47; margin-bottom: 16px; }
+  .brand b { color: #fff; display: block; font-size: 15px; font-weight: 700; margin-bottom: 2px; }
+  .brand span { font-size: 11px; color: #5C6573; letter-spacing: .04em; text-transform: uppercase; }
+  .nav-item { padding: 10px 13px; border-radius: 8px; cursor: pointer; font-size: 13.5px; font-weight: 600; color: #8A93A1; display: flex; align-items: center; gap: 9px; transition: all .12s; margin-bottom: 3px; }
+  .nav-item:hover { background: #1A2B3C; color: #C2C7CE; }
+  .nav-item.active { background: var(--teal); color: #fff; }
+  .nav-icon { font-size: 16px; width: 20px; text-align: center; }
+  .nav-count { margin-left: auto; background: #1A2B3C; color: #6A8A9A; font-size: 11px; padding: 1px 7px; border-radius: 10px; font-weight: 700; }
+  .nav-item.active .nav-count { background: rgba(255,255,255,.2); color: #fff; }
+  .sidebar-section { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: #3A5060; padding: 14px 13px 6px; font-weight: 700; }
+
+  /* MAIN */
+  .main { margin-left: var(--sidebar-w); flex: 1; display: flex; flex-direction: column; min-height: 100vh; }
+  .topbar { background: var(--white); border-bottom: 1px solid var(--line); padding: 14px 28px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 5; }
+  .topbar-title { font-size: 18px; font-weight: 700; color: var(--ink); }
+  .topbar-sub { font-size: 12px; color: var(--gray); margin-top: 1px; }
+  .content { padding: 28px; flex: 1; }
+
+  /* BUTTONS */
+  .btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 8px; font-size: 13.5px; font-weight: 600; cursor: pointer; border: none; transition: all .12s; }
+  .btn-primary { background: var(--teal); color: #fff; }
+  .btn-primary:hover { background: var(--teal-mid); }
+  .btn-secondary { background: var(--paper-dim); color: var(--ink); border: 1px solid var(--line); }
+  .btn-secondary:hover { background: var(--line); }
+  .btn-danger { background: var(--terra-soft); color: var(--terracotta); }
+  .btn-danger:hover { background: var(--terracotta); color: #fff; }
+  .btn-sm { padding: 5px 11px; font-size: 12px; }
+  .btn:disabled { opacity: .4; cursor: not-allowed; }
+
+  /* EMBUDO */
+  .embudo { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; margin-bottom: 28px; }
+  .embudo-col { background: var(--white); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  .embudo-header { padding: 10px 14px; font-size: 12px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; }
+  .embudo-count { font-size: 18px; font-weight: 800; }
+  .embudo-body { padding: 10px; min-height: 120px; }
+  .embudo-card { background: var(--paper); border: 1px solid var(--line); border-radius: 7px; padding: 10px 12px; margin-bottom: 8px; cursor: pointer; transition: all .12s; }
+  .embudo-card:hover { border-color: var(--teal); background: var(--teal-soft); }
+  .embudo-card-name { font-size: 13px; font-weight: 600; margin-bottom: 3px; }
+  .embudo-card-meta { font-size: 11px; color: var(--gray); }
+  .embudo-empty { text-align: center; padding: 20px 10px; color: var(--gray-light); font-size: 12px; }
+
+  /* ETAPA COLORS */
+  .etapa-nuevo { border-top: 3px solid #4A90D9; }
+  .etapa-nuevo .embudo-header { color: #4A90D9; }
+  .etapa-contactado { border-top: 3px solid var(--amber); }
+  .etapa-contactado .embudo-header { color: var(--amber); }
+  .etapa-calificado { border-top: 3px solid #7B5EA7; }
+  .etapa-calificado .embudo-header { color: #7B5EA7; }
+  .etapa-propuesta { border-top: 3px solid var(--teal); }
+  .etapa-propuesta .embudo-header { color: var(--teal); }
+  .etapa-cerrado { border-top: 3px solid var(--green); }
+  .etapa-cerrado .embudo-header { color: var(--green); }
+  .etapa-descartado { border-top: 3px solid var(--gray-light); }
+  .etapa-descartado .embudo-header { color: var(--gray-light); }
+
+  /* TABLA CLIENTES */
+  .table-wrap { background: var(--white); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  .table-toolbar { padding: 14px 18px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+  .search-input { flex: 1; min-width: 200px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px; font-size: 13.5px; color: var(--ink); background: var(--paper); outline: none; }
+  .search-input:focus { border-color: var(--teal); }
+  .filter-select { padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px; font-size: 13px; color: var(--ink); background: var(--paper); outline: none; cursor: pointer; }
+  table { width: 100%; border-collapse: collapse; }
+  th { font-size: 11px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--gray); padding: 10px 16px; text-align: left; background: var(--paper); border-bottom: 1px solid var(--line); }
+  td { padding: 12px 16px; font-size: 13.5px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: var(--paper); }
+  .td-name { font-weight: 600; }
+  .td-sub { font-size: 11px; color: var(--gray); margin-top: 2px; }
+
+  /* CHIPS */
+  .chip { display: inline-flex; align-items: center; gap: 4px; padding: 3px 9px; border-radius: 20px; font-size: 11.5px; font-weight: 600; }
+  .chip-nuevo { background: #EBF3FC; color: #4A90D9; }
+  .chip-contactado { background: var(--amber-soft); color: var(--amber); }
+  .chip-calificado { background: #F0EBF8; color: #7B5EA7; }
+  .chip-propuesta { background: var(--teal-soft); color: var(--teal); }
+  .chip-cerrado { background: var(--green-soft); color: var(--green); }
+  .chip-descartado { background: var(--paper-dim); color: var(--gray); }
+  .chip-temp-caliente { background: #FEE2E2; color: #DC2626; }
+  .chip-temp-tibio { background: var(--amber-soft); color: var(--amber); }
+  .chip-temp-frio { background: #EBF3FC; color: #4A90D9; }
+
+  /* MODAL */
+  .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.45); z-index: 100; align-items: center; justify-content: center; }
+  .modal-overlay.open { display: flex; }
+  .modal { background: var(--white); border-radius: 14px; width: 520px; max-width: 95vw; max-height: 90vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,.2); }
+  .modal-header { padding: 20px 24px 16px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; }
+  .modal-title { font-size: 17px; font-weight: 700; }
+  .modal-close { background: none; border: none; font-size: 20px; cursor: pointer; color: var(--gray); padding: 4px; border-radius: 6px; }
+  .modal-close:hover { background: var(--paper-dim); }
+  .modal-body { padding: 20px 24px; }
+  .modal-footer { padding: 16px 24px; border-top: 1px solid var(--line); display: flex; gap: 10px; justify-content: flex-end; }
+  .form-row { margin-bottom: 16px; }
+  .form-row label { display: block; font-size: 12px; font-weight: 700; color: var(--gray); margin-bottom: 6px; text-transform: uppercase; letter-spacing: .05em; }
+  .form-row input, .form-row select, .form-row textarea { width: 100%; padding: 9px 12px; border: 1px solid var(--line); border-radius: 8px; font-size: 14px; color: var(--ink); background: var(--paper); outline: none; font-family: inherit; }
+  .form-row input:focus, .form-row select:focus, .form-row textarea:focus { border-color: var(--teal); background: var(--white); }
+  .form-row textarea { min-height: 80px; resize: vertical; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+  /* DETALLE CLIENTE */
+  .detail-grid { display: grid; grid-template-columns: 1fr 340px; gap: 20px; }
+  .detail-card { background: var(--white); border: 1px solid var(--line); border-radius: 10px; padding: 20px; margin-bottom: 16px; }
+  .detail-card h3 { font-size: 13px; font-weight: 700; color: var(--gray); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 14px; }
+  .detail-field { margin-bottom: 12px; }
+  .detail-label { font-size: 11px; color: var(--gray); font-weight: 600; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 3px; }
+  .detail-value { font-size: 14px; color: var(--ink); font-weight: 500; }
+  .historial-item { padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .historial-item:last-child { border-bottom: none; }
+  .historial-tipo { font-size: 11px; font-weight: 700; color: var(--teal); text-transform: uppercase; letter-spacing: .05em; }
+  .historial-desc { font-size: 13.5px; margin: 3px 0; }
+  .historial-fecha { font-size: 11px; color: var(--gray-light); }
+  .etiquetas-wrap { display: flex; flex-wrap: wrap; gap: 6px; }
+  .etiqueta-chip { display: inline-flex; align-items: center; gap: 5px; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; color: #fff; }
+  .etiqueta-remove { cursor: pointer; opacity: .7; font-size: 13px; }
+  .etiqueta-remove:hover { opacity: 1; }
+
+  /* STATS */
+  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 24px; }
+  .stat-card { background: var(--white); border: 1px solid var(--line); border-radius: 10px; padding: 16px 20px; }
+  .stat-num { font-size: 28px; font-weight: 800; color: var(--ink); }
+  .stat-label { font-size: 12px; color: var(--gray); margin-top: 2px; font-weight: 500; }
+
+  /* TOAST */
+  .toast { position: fixed; bottom: 24px; right: 24px; background: var(--ink); color: #fff; padding: 12px 20px; border-radius: 10px; font-size: 13.5px; font-weight: 500; z-index: 200; opacity: 0; transform: translateY(10px); transition: all .25s; pointer-events: none; }
+  .toast.show { opacity: 1; transform: translateY(0); }
+
+  /* LOADING */
+  .loading { display: flex; align-items: center; justify-content: center; padding: 60px; color: var(--gray); font-size: 14px; gap: 10px; }
+  .spinner { width: 20px; height: 20px; border: 2px solid var(--line); border-top-color: var(--teal); border-radius: 50%; animation: spin .7s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .empty-state { text-align: center; padding: 60px 20px; color: var(--gray); }
+  .empty-state .empty-icon { font-size: 40px; margin-bottom: 12px; }
+  .empty-state p { font-size: 14px; }
+
+  @media (max-width: 900px) {
+    .embudo { grid-template-columns: repeat(3, 1fr); }
+    .stats-row { grid-template-columns: repeat(2, 1fr); }
+    .detail-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="brand" style="padding:12px 8px 16px;border-bottom:1px solid #1E2D3D;margin-bottom:14px;text-align:center;">
+    <img src="data:image/png;base64,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" alt="Mujeres Inmobiliarias" style="max-width:180px;max-height:65px;object-fit:contain;">
+    <div style="font-size:10px;color:#4A6070;letter-spacing:.08em;text-transform:uppercase;margin-top:8px;font-weight:600;">CRM Comercial</div>
+  </div>
+  <div class="sidebar-section">Menú</div>
+  <div class="nav-item active" onclick="showSection('dashboard')" id="nav-dashboard">
+    <span class="nav-icon">📊</span> Dashboard
+  </div>
+  <div class="nav-item" onclick="showSection('clientes')" id="nav-clientes">
+    <span class="nav-icon">👥</span> Clientes
+    <span class="nav-count" id="count-clientes">0</span>
+  </div>
+  <div class="nav-item" onclick="showSection('embudo')" id="nav-embudo">
+    <span class="nav-icon">🔀</span> Embudo
+  </div>
+  <div class="nav-item" onclick="showSection('etiquetas')" id="nav-etiquetas">
+    <span class="nav-icon">🏷️</span> Etiquetas
+  </div>
+</div>
+
+<div class="main">
+  <div class="topbar">
+    <div>
+      <div class="topbar-title" id="topbar-title">Dashboard</div>
+      <div class="topbar-sub" id="topbar-sub">Resumen general del CRM</div>
+    </div>
+    <div style="display:flex;gap:10px;">
+      <button class="btn btn-primary" onclick="openModalNuevoCliente()">+ Nuevo cliente</button>
+    </div>
+  </div>
+  <div class="content" id="content">
+    <div class="loading"><div class="spinner"></div> Cargando...</div>
+  </div>
+</div>
+
+<!-- MODAL NUEVO/EDITAR CLIENTE -->
+<div class="modal-overlay" id="modal-cliente">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title" id="modal-cliente-title">Nuevo cliente</div>
+      <button class="modal-close" onclick="closeModal('modal-cliente')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-grid">
+        <div class="form-row">
+          <label>Nombre *</label>
+          <input id="f-nombre" type="text" placeholder="Juan">
+        </div>
+        <div class="form-row">
+          <label>Apellido</label>
+          <input id="f-apellido" type="text" placeholder="García">
+        </div>
+      </div>
+      <div class="form-grid">
+        <div class="form-row">
+          <label>Teléfono</label>
+          <input id="f-telefono" type="text" placeholder="+54 11 1234-5678">
+        </div>
+        <div class="form-row">
+          <label>Email</label>
+          <input id="f-email" type="email" placeholder="juan@mail.com">
+        </div>
+      </div>
+      <div class="form-grid">
+        <div class="form-row">
+          <label>Origen</label>
+          <select id="f-origen">
+            <option value="">Seleccionar...</option>
+            <option value="WhatsApp">WhatsApp</option>
+            <option value="Instagram">Instagram</option>
+            <option value="Facebook">Facebook</option>
+            <option value="Referido">Referido</option>
+            <option value="Web">Web</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>Temperatura</label>
+          <select id="f-temperatura">
+            <option value="tibio">Tibio</option>
+            <option value="caliente">Caliente</option>
+            <option value="frio">Frío</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <label>Etapa</label>
+        <select id="f-etapa">
+          <option value="nuevo">Nuevo</option>
+          <option value="contactado">Contactado</option>
+          <option value="calificado">Calificado</option>
+          <option value="propuesta">Propuesta enviada</option>
+          <option value="cerrado">Cerrado</option>
+          <option value="descartado">Descartado</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label>Notas</label>
+        <textarea id="f-notas" placeholder="Qué busca, presupuesto, preferencias..."></textarea>
+      </div>
+      <input type="hidden" id="f-id">
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('modal-cliente')">Cancelar</button>
+      <button class="btn btn-primary" onclick="guardarCliente()">Guardar cliente</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL HISTORIAL -->
+<div class="modal-overlay" id="modal-historial">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title">Registrar contacto</div>
+      <button class="modal-close" onclick="closeModal('modal-historial')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-row">
+        <label>Tipo de contacto</label>
+        <select id="h-tipo">
+          <option value="WhatsApp">WhatsApp</option>
+          <option value="Llamada">Llamada</option>
+          <option value="Email">Email</option>
+          <option value="Propuesta enviada">Propuesta enviada</option>
+          <option value="Reunión">Reunión</option>
+          <option value="Nota interna">Nota interna</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label>Descripción</label>
+        <textarea id="h-descripcion" placeholder="Qué se habló, qué le interesó, próximos pasos..."></textarea>
+      </div>
+      <input type="hidden" id="h-cliente-id">
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('modal-historial')">Cancelar</button>
+      <button class="btn btn-primary" onclick="guardarHistorial()">Guardar</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL ETIQUETA NUEVA -->
+<div class="modal-overlay" id="modal-etiqueta">
+  <div class="modal" style="width:380px">
+    <div class="modal-header">
+      <div class="modal-title">Nueva etiqueta</div>
+      <button class="modal-close" onclick="closeModal('modal-etiqueta')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-row">
+        <label>Nombre de la etiqueta</label>
+        <input id="e-nombre" type="text" placeholder="Ej: Oficina en Canning">
+      </div>
+      <div class="form-row">
+        <label>Color</label>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;" id="color-picker">
+          <div class="color-opt" style="background:#2D6A6A" data-color="#2D6A6A" onclick="selectColor(this)">✓</div>
+          <div class="color-opt" style="background:#B5564A" data-color="#B5564A" onclick="selectColor(this)"></div>
+          <div class="color-opt" style="background:#A87B22" data-color="#A87B22" onclick="selectColor(this)"></div>
+          <div class="color-opt" style="background:#4A90D9" data-color="#4A90D9" onclick="selectColor(this)"></div>
+          <div class="color-opt" style="background:#7B5EA7" data-color="#7B5EA7" onclick="selectColor(this)"></div>
+          <div class="color-opt" style="background:#2D6A4A" data-color="#2D6A4A" onclick="selectColor(this)"></div>
+          <div class="color-opt" style="background:#C2410C" data-color="#C2410C" onclick="selectColor(this)"></div>
+          <div class="color-opt" style="background:#1D4ED8" data-color="#1D4ED8" onclick="selectColor(this)"></div>
+        </div>
+        <input type="hidden" id="e-color" value="#2D6A6A">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('modal-etiqueta')">Cancelar</button>
+      <button class="btn btn-primary" onclick="guardarEtiqueta()">Crear etiqueta</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<style>
+.color-opt { width:28px;height:28px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700;border:2px solid transparent;transition:all .12s; }
+.color-opt:hover { transform:scale(1.15); }
+.color-opt.selected { border-color: var(--ink); }
+</style>
+
+<script>
+const SUPABASE_URL = 'https://tvffdahkgifhzcknillb.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_CM64ErDhI9dEzxRvIGlEiw_psdYfdN4';
+
+const api = async (path, method = 'GET', body = null, extra = {}) => {
+  const opts = {
+    method,
+    headers: {
+      'apikey': SUPABASE_KEY,
+      'Authorization': `Bearer ${SUPABASE_KEY}`,
+      'Content-Type': 'application/json',
+      'Prefer': method === 'POST' ? 'return=representation' : '',
+      ...extra
+    }
+  };
+  if (body) opts.body = JSON.stringify(body);
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/${path}`, opts);
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.message || 'Error de conexión');
+  }
+  return method === 'DELETE' ? null : res.json().catch(() => null);
+};
+
+let state = { clientes: [], etiquetas: [], clienteEtiquetas: [], historial: [], seccion: 'dashboard', clienteDetalle: null };
+
+const ETAPAS = [
+  { key: 'nuevo', label: 'Nuevo', cls: 'etapa-nuevo', chip: 'chip-nuevo' },
+  { key: 'contactado', label: 'Contactado', cls: 'etapa-contactado', chip: 'chip-contactado' },
+  { key: 'calificado', label: 'Calificado', cls: 'etapa-calificado', chip: 'chip-calificado' },
+  { key: 'propuesta', label: 'Propuesta', cls: 'etapa-propuesta', chip: 'chip-propuesta' },
+  { key: 'cerrado', label: 'Cerrado', cls: 'etapa-cerrado', chip: 'chip-cerrado' },
+  { key: 'descartado', label: 'Descartado', cls: 'etapa-descartado', chip: 'chip-descartado' },
+];
+
+const fmtFecha = d => new Date(d).toLocaleDateString('es-AR', { day:'2-digit', month:'short', year:'numeric' });
+const fmtHora = d => new Date(d).toLocaleTimeString('es-AR', { hour:'2-digit', minute:'2-digit' });
+
+const toast = (msg, dur = 2500) => {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), dur);
+};
+
+const openModal = id => document.getElementById(id).classList.add('open');
+const closeModal = id => document.getElementById(id).classList.remove('open');
+
+document.querySelectorAll('.modal-overlay').forEach(m => {
+  m.addEventListener('click', e => { if (e.target === m) m.classList.remove('open'); });
+});
+
+async function loadAll() {
+  try {
+    const [clientes, etiquetas, ce, hist] = await Promise.all([
+      api('clientes?order=created_at.desc'),
+      api('etiquetas?order=nombre.asc'),
+      api('cliente_etiquetas?select=*'),
+      api('historial?order=created_at.desc'),
+    ]);
+    state.clientes = clientes || [];
+    state.etiquetas = etiquetas || [];
+    state.clienteEtiquetas = ce || [];
+    state.historial = hist || [];
+    document.getElementById('count-clientes').textContent = state.clientes.length;
+    render();
+  } catch(e) {
+    document.getElementById('content').innerHTML = `<div class="empty-state"><div class="empty-icon">⚠️</div><p>Error al conectar con la base de datos.<br><small>${e.message}</small></p></div>`;
+  }
+}
+
+function showSection(sec) {
+  state.seccion = sec;
+  state.clienteDetalle = null;
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('nav-' + sec)?.classList.add('active');
+  const titles = { dashboard: ['Dashboard', 'Resumen general del CRM'], clientes: ['Clientes', 'Todos los leads y clientes'], embudo: ['Embudo de ventas', 'Estado de cada lead en el proceso'], etiquetas: ['Etiquetas', 'Clasificaciones personalizadas'] };
+  const [t, s] = titles[sec] || ['CRM', ''];
+  document.getElementById('topbar-title').textContent = t;
+  document.getElementById('topbar-sub').textContent = s;
+  render();
+}
+
+function render() {
+  const c = document.getElementById('content');
+  if (state.clienteDetalle) { c.innerHTML = renderDetalle(state.clienteDetalle); return; }
+  if (state.seccion === 'dashboard') c.innerHTML = renderDashboard();
+  else if (state.seccion === 'clientes') c.innerHTML = renderClientes();
+  else if (state.seccion === 'embudo') c.innerHTML = renderEmbudo();
+  else if (state.seccion === 'etiquetas') c.innerHTML = renderEtiquetas();
+}
+
+function renderDashboard() {
+  const total = state.clientes.length;
+  const calientes = state.clientes.filter(c => c.temperatura === 'caliente').length;
+  const propuestas = state.clientes.filter(c => c.etapa === 'propuesta').length;
+  const cerrados = state.clientes.filter(c => c.etapa === 'cerrado').length;
+  const hoy = new Date().toDateString();
+  const hoyCount = state.clientes.filter(c => new Date(c.created_at).toDateString() === hoy).length;
+
+  return `
+    <div class="stats-row">
+      <div class="stat-card"><div class="stat-num">${total}</div><div class="stat-label">Total clientes</div></div>
+      <div class="stat-card"><div class="stat-num" style="color:#DC2626">${calientes}</div><div class="stat-label">🔥 Calientes</div></div>
+      <div class="stat-card"><div class="stat-num" style="color:var(--teal)">${propuestas}</div><div class="stat-label">Propuestas enviadas</div></div>
+      <div class="stat-card"><div class="stat-num" style="color:var(--green)">${cerrados}</div><div class="stat-label">✅ Cerrados</div></div>
+    </div>
+    <div class="stats-row" style="grid-template-columns:1fr 1fr;margin-bottom:0">
+      <div class="stat-card"><div class="stat-num" style="color:var(--amber)">${hoyCount}</div><div class="stat-label">Leads ingresados hoy</div></div>
+      <div class="stat-card"><div class="stat-num">${state.etiquetas.length}</div><div class="stat-label">Etiquetas creadas</div></div>
+    </div>
+    <div style="margin-top:24px">
+      <div style="font-size:15px;font-weight:700;margin-bottom:14px;">Últimos clientes ingresados</div>
+      ${state.clientes.slice(0,5).map(c => `
+        <div style="background:var(--white);border:1px solid var(--line);border-radius:9px;padding:13px 16px;margin-bottom:8px;display:flex;align-items:center;gap:14px;cursor:pointer;" onclick="verCliente('${c.id}')">
+          <div style="flex:1"><div style="font-weight:600;font-size:14px">${c.nombre} ${c.apellido||''}</div><div style="font-size:12px;color:var(--gray)">${c.origen||'Sin origen'} · ${fmtFecha(c.created_at)}</div></div>
+          <span class="chip chip-${c.etapa}">${ETAPAS.find(e=>e.key===c.etapa)?.label||c.etapa}</span>
+          ${c.temperatura ? `<span class="chip chip-temp-${c.temperatura}">${c.temperatura}</span>` : ''}
+        </div>
+      `).join('') || '<div class="empty-state" style="padding:30px"><p>No hay clientes aún. ¡Cargá el primero!</p></div>'}
+    </div>
+  `;
+}
+
+function renderClientes() {
+  return `
+    <div class="table-wrap">
+      <div class="table-toolbar">
+        <input class="search-input" id="search-clientes" placeholder="🔍 Buscar por nombre, email, teléfono..." oninput="filtrarClientes()">
+        <select class="filter-select" id="filter-etapa" onchange="filtrarClientes()">
+          <option value="">Todas las etapas</option>
+          ${ETAPAS.map(e => `<option value="${e.key}">${e.label}</option>`).join('')}
+        </select>
+        <select class="filter-select" id="filter-temp" onchange="filtrarClientes()">
+          <option value="">Toda temperatura</option>
+          <option value="caliente">🔥 Caliente</option>
+          <option value="tibio">🌡️ Tibio</option>
+          <option value="frio">❄️ Frío</option>
+        </select>
+        <select class="filter-select" id="filter-origen" onchange="filtrarClientes()">
+          <option value="">Todo origen</option>
+          <option value="WhatsApp">WhatsApp</option>
+          <option value="Instagram">Instagram</option>
+          <option value="Facebook">Facebook</option>
+          <option value="Referido">Referido</option>
+        </select>
+      </div>
+      <table>
+        <thead><tr>
+          <th>Cliente</th><th>Contacto</th><th>Origen</th><th>Etapa</th><th>Temperatura</th><th>Ingreso</th><th>Acciones</th>
+        </tr></thead>
+        <tbody id="tbody-clientes">
+          ${renderFilasClientes(state.clientes)}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+function renderFilasClientes(lista) {
+  if (!lista.length) return `<tr><td colspan="7"><div class="empty-state" style="padding:40px"><div class="empty-icon">👥</div><p>No hay clientes que coincidan con el filtro.</p></div></td></tr>`;
+  return lista.map(c => {
+    const etapa = ETAPAS.find(e => e.key === c.etapa);
+    const etiquetas = state.clienteEtiquetas.filter(ce => ce.cliente_id === c.id).map(ce => state.etiquetas.find(e => e.id === ce.etiqueta_id)).filter(Boolean);
+    return `
+    <tr>
+      <td class="td-name" style="cursor:pointer" onclick="verCliente('${c.id}')">
+        ${c.nombre} ${c.apellido||''}
+        ${etiquetas.length ? `<div style="margin-top:5px;display:flex;gap:4px;flex-wrap:wrap">${etiquetas.map(e=>`<span style="background:${e.color};color:#fff;padding:2px 8px;border-radius:20px;font-size:10px;font-weight:600">${e.nombre}</span>`).join('')}</div>` : ''}
+      </td>
+      <td><div>${c.telefono||'—'}</div><div class="td-sub">${c.email||'—'}</div></td>
+      <td>${c.origen||'—'}</td>
+      <td><span class="chip chip-${c.etapa}">${etapa?.label||c.etapa}</span></td>
+      <td>${c.temperatura ? `<span class="chip chip-temp-${c.temperatura}">${c.temperatura}</span>` : '—'}</td>
+      <td><div>${fmtFecha(c.created_at)}</div></td>
+      <td>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-sm btn-secondary" onclick="verCliente('${c.id}')">Ver</button>
+          <button class="btn btn-sm btn-primary" onclick="editarCliente('${c.id}')">Editar</button>
+        </div>
+      </td>
+    </tr>`;
+  }).join('');
+}
+
+function filtrarClientes() {
+  const q = document.getElementById('search-clientes')?.value.toLowerCase() || '';
+  const etapa = document.getElementById('filter-etapa')?.value || '';
+  const temp = document.getElementById('filter-temp')?.value || '';
+  const origen = document.getElementById('filter-origen')?.value || '';
+  const filtrados = state.clientes.filter(c => {
+    const texto = `${c.nombre} ${c.apellido||''} ${c.email||''} ${c.telefono||''}`.toLowerCase();
+    return (!q || texto.includes(q)) && (!etapa || c.etapa === etapa) && (!temp || c.temperatura === temp) && (!origen || c.origen === origen);
+  });
+  const tbody = document.getElementById('tbody-clientes');
+  if (tbody) tbody.innerHTML = renderFilasClientes(filtrados);
+}
+
+function renderEmbudo() {
+  return `
+    <div class="embudo">
+      ${ETAPAS.map(etapa => {
+        const clientes = state.clientes.filter(c => c.etapa === etapa.key);
+        return `
+          <div class="embudo-col ${etapa.cls}">
+            <div class="embudo-header">
+              <span>${etapa.label}</span>
+              <span class="embudo-count">${clientes.length}</span>
+            </div>
+            <div class="embudo-body">
+              ${clientes.length ? clientes.map(c => `
+                <div class="embudo-card" onclick="verCliente('${c.id}')">
+                  <div class="embudo-card-name">${c.nombre} ${c.apellido||''}</div>
+                  <div class="embudo-card-meta">${c.origen||'Sin origen'} · ${c.temperatura||''}</div>
+                </div>
+              `).join('') : `<div class="embudo-empty">Sin clientes</div>`}
+            </div>
+          </div>
+        `;
+      }).join('')}
+    </div>
+  `;
+}
+
+function renderEtiquetas() {
+  return `
+    <div style="display:flex;justify-content:flex-end;margin-bottom:16px">
+      <button class="btn btn-primary" onclick="openModal('modal-etiqueta')">+ Nueva etiqueta</button>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Etiqueta</th><th>Color</th><th>Clientes</th><th>Acciones</th></tr></thead>
+        <tbody>
+          ${state.etiquetas.length ? state.etiquetas.map(e => {
+            const count = state.clienteEtiquetas.filter(ce => ce.etiqueta_id === e.id).length;
+            return `<tr>
+              <td><span class="etiqueta-chip" style="background:${e.color}">${e.nombre}</span></td>
+              <td><span style="font-family:monospace;font-size:12px;color:var(--gray)">${e.color}</span></td>
+              <td>${count} cliente${count !== 1 ? 's' : ''}</td>
+              <td><button class="btn btn-sm btn-danger" onclick="eliminarEtiqueta('${e.id}')">Eliminar</button></td>
+            </tr>`;
+          }).join('') : `<tr><td colspan="4"><div class="empty-state" style="padding:40px"><div class="empty-icon">🏷️</div><p>No hay etiquetas aún. ¡Creá la primera!</p></div></td></tr>`}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+function renderDetalle(clienteId) {
+  const c = state.clientes.find(x => x.id === clienteId);
+  if (!c) return '<div class="empty-state"><p>Cliente no encontrado</p></div>';
+  const etapa = ETAPAS.find(e => e.key === c.etapa);
+  const etiquetasCliente = state.clienteEtiquetas.filter(ce => ce.cliente_id === c.id).map(ce => state.etiquetas.find(e => e.id === ce.etiqueta_id)).filter(Boolean);
+  const etiquetasDisp = state.etiquetas.filter(e => !etiquetasCliente.find(ec => ec.id === e.id));
+  const hist = state.historial.filter(h => h.cliente_id === c.id);
+
+  return `
+    <div style="margin-bottom:16px;display:flex;align-items:center;gap:12px">
+      <button class="btn btn-secondary btn-sm" onclick="state.clienteDetalle=null;render()">← Volver</button>
+      <div style="font-size:18px;font-weight:700">${c.nombre} ${c.apellido||''}</div>
+      <span class="chip chip-${c.etapa}">${etapa?.label||c.etapa}</span>
+      ${c.temperatura ? `<span class="chip chip-temp-${c.temperatura}">${c.temperatura}</span>` : ''}
+      <div style="margin-left:auto;display:flex;gap:8px">
+        <button class="btn btn-secondary btn-sm" onclick="editarCliente('${c.id}')">✏️ Editar</button>
+        <button class="btn btn-primary btn-sm" onclick="abrirHistorial('${c.id}')">+ Registrar contacto</button>
+        <button class="btn btn-sm" style="background:#25D366;color:#fff" onclick="abrirWhatsApp('${c.telefono||''}','${c.nombre}')">💬 WhatsApp</button>
+        ${c.email ? `<button class="btn btn-sm" style="background:#4A90D9;color:#fff" onclick="abrirMail('${c.email}','${c.nombre}')">✉️ Email</button>` : ''}
+      </div>
+    </div>
+    <div class="detail-grid">
+      <div>
+        <div class="detail-card">
+          <h3>Datos del cliente</h3>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div class="detail-field"><div class="detail-label">Teléfono</div><div class="detail-value">${c.telefono||'—'}</div></div>
+            <div class="detail-field"><div class="detail-label">Email</div><div class="detail-value">${c.email||'—'}</div></div>
+            <div class="detail-field"><div class="detail-label">Origen</div><div class="detail-value">${c.origen||'—'}</div></div>
+            <div class="detail-field"><div class="detail-label">Ingreso</div><div class="detail-value">${fmtFecha(c.created_at)}</div></div>
+          </div>
+          ${c.notas ? `<div class="detail-field" style="margin-top:12px"><div class="detail-label">Notas</div><div class="detail-value" style="white-space:pre-wrap">${c.notas}</div></div>` : ''}
+        </div>
+        <div class="detail-card">
+          <h3>Historial de contactos</h3>
+          ${hist.length ? hist.map(h => `
+            <div class="historial-item">
+              <div class="historial-tipo">${h.tipo}</div>
+              <div class="historial-desc">${h.descripcion}</div>
+              <div class="historial-fecha">${fmtFecha(h.created_at)} · ${fmtHora(h.created_at)}</div>
+            </div>
+          `).join('') : '<div style="color:var(--gray-light);font-size:13px;padding:10px 0">Sin contactos registrados aún.</div>'}
+        </div>
+      </div>
+      <div>
+        <div class="detail-card">
+          <h3>Etapa del embudo</h3>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            ${ETAPAS.map(etapa => `
+              <div onclick="cambiarEtapa('${c.id}','${etapa.key}')" style="padding:9px 13px;border-radius:8px;cursor:pointer;font-size:13px;font-weight:600;border:2px solid ${c.etapa===etapa.key?'var(--teal)':'var(--line)'};background:${c.etapa===etapa.key?'var(--teal-soft)':'var(--white)'};color:${c.etapa===etapa.key?'var(--teal)':'var(--gray)'};transition:all .12s">
+                ${c.etapa===etapa.key?'✓ ':''}${etapa.label}
+              </div>
+            `).join('')}
+          </div>
+        </div>
+        <div class="detail-card">
+          <h3>Etiquetas</h3>
+          <div class="etiquetas-wrap" style="margin-bottom:12px">
+            ${etiquetasCliente.map(e => `<span class="etiqueta-chip" style="background:${e.color}">${e.nombre} <span class="etiqueta-remove" onclick="quitarEtiqueta('${c.id}','${e.id}')">✕</span></span>`).join('') || '<span style="font-size:12px;color:var(--gray-light)">Sin etiquetas</span>'}
+          </div>
+          ${etiquetasDisp.length ? `
+            <select onchange="agregarEtiqueta('${c.id}',this.value);this.value=''" style="width:100%;padding:8px;border:1px solid var(--line);border-radius:8px;font-size:13px;outline:none">
+              <option value="">+ Agregar etiqueta...</option>
+              ${etiquetasDisp.map(e => `<option value="${e.id}">${e.nombre}</option>`).join('')}
+            </select>
+          ` : '<div style="font-size:12px;color:var(--gray-light)">No hay más etiquetas disponibles.</div>'}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function verCliente(id) {
+  state.clienteDetalle = id;
+  document.getElementById('topbar-title').textContent = 'Detalle del cliente';
+  document.getElementById('topbar-sub').textContent = '';
+  render();
+}
+
+function openModalNuevoCliente() {
+  document.getElementById('f-id').value = '';
+  document.getElementById('f-nombre').value = '';
+  document.getElementById('f-apellido').value = '';
+  document.getElementById('f-telefono').value = '';
+  document.getElementById('f-email').value = '';
+  document.getElementById('f-origen').value = '';
+  document.getElementById('f-temperatura').value = 'tibio';
+  document.getElementById('f-etapa').value = 'nuevo';
+  document.getElementById('f-notas').value = '';
+  document.getElementById('modal-cliente-title').textContent = 'Nuevo cliente';
+  openModal('modal-cliente');
+}
+
+function editarCliente(id) {
+  const c = state.clientes.find(x => x.id === id);
+  if (!c) return;
+  document.getElementById('f-id').value = c.id;
+  document.getElementById('f-nombre').value = c.nombre || '';
+  document.getElementById('f-apellido').value = c.apellido || '';
+  document.getElementById('f-telefono').value = c.telefono || '';
+  document.getElementById('f-email').value = c.email || '';
+  document.getElementById('f-origen').value = c.origen || '';
+  document.getElementById('f-temperatura').value = c.temperatura || 'tibio';
+  document.getElementById('f-etapa').value = c.etapa || 'nuevo';
+  document.getElementById('f-notas').value = c.notas || '';
+  document.getElementById('modal-cliente-title').textContent = 'Editar cliente';
+  openModal('modal-cliente');
+}
+
+async function guardarCliente() {
+  const id = document.getElementById('f-id').value;
+  const nombre = document.getElementById('f-nombre').value.trim();
+  if (!nombre) { toast('El nombre es obligatorio'); return; }
+  const data = {
+    nombre,
+    apellido: document.getElementById('f-apellido').value.trim(),
+    telefono: document.getElementById('f-telefono').value.trim(),
+    email: document.getElementById('f-email').value.trim(),
+    origen: document.getElementById('f-origen').value,
+    temperatura: document.getElementById('f-temperatura').value,
+    etapa: document.getElementById('f-etapa').value,
+    notas: document.getElementById('f-notas').value.trim(),
+  };
+  try {
+    if (id) {
+      await api(`clientes?id=eq.${id}`, 'PATCH', data);
+      toast('✅ Cliente actualizado');
+    } else {
+      await api('clientes', 'POST', data);
+      toast('✅ Cliente guardado');
+    }
+    closeModal('modal-cliente');
+    await loadAll();
+  } catch(e) { toast('Error: ' + e.message); }
+}
+
+async function cambiarEtapa(clienteId, etapa) {
+  try {
+    await api(`clientes?id=eq.${clienteId}`, 'PATCH', { etapa });
+    toast('✅ Etapa actualizada');
+    await loadAll();
+    state.clienteDetalle = clienteId;
+    render();
+  } catch(e) { toast('Error: ' + e.message); }
+}
+
+function abrirHistorial(clienteId) {
+  document.getElementById('h-cliente-id').value = clienteId;
+  document.getElementById('h-tipo').value = 'WhatsApp';
+  document.getElementById('h-descripcion').value = '';
+  openModal('modal-historial');
+}
+
+async function guardarHistorial() {
+  const clienteId = document.getElementById('h-cliente-id').value;
+  const tipo = document.getElementById('h-tipo').value;
+  const descripcion = document.getElementById('h-descripcion').value.trim();
+  if (!descripcion) { toast('Escribí una descripción'); return; }
+  try {
+    await api('historial', 'POST', { cliente_id: clienteId, tipo, descripcion });
+    toast('✅ Contacto registrado');
+    closeModal('modal-historial');
+    await loadAll();
+    state.clienteDetalle = clienteId;
+    render();
+  } catch(e) { toast('Error: ' + e.message); }
+}
+
+async function agregarEtiqueta(clienteId, etiquetaId) {
+  if (!etiquetaId) return;
+  try {
+    await api('cliente_etiquetas', 'POST', { cliente_id: clienteId, etiqueta_id: etiquetaId });
+    await loadAll();
+    state.clienteDetalle = clienteId;
+    render();
+  } catch(e) { toast('Error: ' + e.message); }
+}
+
+async function quitarEtiqueta(clienteId, etiquetaId) {
+  try {
+    await api(`cliente_etiquetas?cliente_id=eq.${clienteId}&etiqueta_id=eq.${etiquetaId}`, 'DELETE');
+    await loadAll();
+    state.clienteDetalle = clienteId;
+    render();
+  } catch(e) { toast('Error: ' + e.message); }
+}
+
+async function guardarEtiqueta() {
+  const nombre = document.getElementById('e-nombre').value.trim();
+  const color = document.getElementById('e-color').value;
+  if (!nombre) { toast('El nombre es obligatorio'); return; }
+  try {
+    await api('etiquetas', 'POST', { nombre, color });
+    toast('✅ Etiqueta creada');
+    closeModal('modal-etiqueta');
+    await loadAll();
+  } catch(e) { toast('Error: ' + e.message); }
+}
+
+async function eliminarEtiqueta(id) {
+  if (!confirm('¿Eliminar esta etiqueta?')) return;
+  try {
+    await api(`etiquetas?id=eq.${id}`, 'DELETE');
+    toast('Etiqueta eliminada');
+    await loadAll();
+  } catch(e) { toast('Error: ' + e.message); }
+}
+
+function selectColor(el) {
+  document.querySelectorAll('.color-opt').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById('e-color').value = el.dataset.color;
+  document.querySelectorAll('.color-opt').forEach(o => o.textContent = '');
+  el.textContent = '✓';
+}
+
+function abrirWhatsApp(tel, nombre) {
+  const num = tel.replace(/\D/g,'');
+  if (!num) { toast('Este cliente no tiene teléfono cargado'); return; }
+  const msg = encodeURIComponent(`Hola ${nombre}, te contactamos desde Mujeres Inmobiliarias.`);
+  window.open(`https://wa.me/${num}?text=${msg}`, '_blank');
+}
+
+function abrirMail(email, nombre) {
+  window.open(`mailto:${email}?subject=Mujeres Inmobiliarias - Información de propiedades&body=Hola ${nombre},%0D%0A%0D%0ATe contactamos desde Mujeres Inmobiliarias.`, '_blank');
+}
+
+loadAll();
+</script>
+</body>
+</html>
